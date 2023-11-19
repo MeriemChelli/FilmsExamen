@@ -21,7 +21,10 @@ import androidx.compose.material.SnackbarDefaults.backgroundColor
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.filled.Favorite
 import androidx.compose.material.icons.filled.Movie
+import androidx.compose.material.icons.filled.People
 import androidx.compose.material.icons.filled.Person
+import androidx.compose.material.icons.filled.Person3
+import androidx.compose.material.icons.filled.Star
 import androidx.compose.material3.BottomAppBar
 import androidx.compose.material3.ExperimentalMaterial3Api
 import androidx.compose.material3.Icon
@@ -90,6 +93,30 @@ class MainActivity : ComponentActivity() {
                                         val navBackStackEntry by navController.currentBackStackEntryAsState()
                                         val currentDestination = navBackStackEntry?.destination
 
+
+                                        BottomNavigationItem(
+                                            icon = {
+
+                                                Icon(
+                                                    Icons.Filled.Person,
+                                                    contentDescription = null
+                                                )
+                                            },
+                                            label = { },
+                                            selected = currentDestination?.hierarchy?.any { it.route == "profil" } == true,
+                                            onClick = {
+                                                navController.navigate("profil") {
+
+                                                    popUpTo(navController.graph.findStartDestination().id) {
+                                                        saveState = true
+                                                    }
+
+                                                    launchSingleTop = true
+
+                                                    restoreState = true
+                                                }
+                                            }
+                                        )
                                         BottomNavigationItem(
                                             icon = {
 
@@ -113,6 +140,7 @@ class MainActivity : ComponentActivity() {
                                                 }
                                             }
                                         )
+
                                         BottomNavigationItem(
                                             icon = {
                                                 Icon(
@@ -138,7 +166,7 @@ class MainActivity : ComponentActivity() {
                                         BottomNavigationItem(
                                             icon = {
                                                 Icon(
-                                                    Icons.Filled.Person,
+                                                    Icons.Filled.People,
                                                     contentDescription = null,
 
                                                     )

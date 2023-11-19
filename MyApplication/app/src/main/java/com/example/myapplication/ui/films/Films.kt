@@ -39,16 +39,21 @@ import androidx.compose.ui.unit.dp
 import androidx.navigation.NavController
 import com.example.myapplication.R
 import androidx.compose.foundation.lazy.grid.items
+import androidx.compose.material3.IconButton
+
 import androidx.compose.foundation.shape.CircleShape
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material.MaterialTheme.colors
 import androidx.compose.material.TextField
 import androidx.compose.material.icons.Icons
+import androidx.compose.material.icons.filled.ArrowBack
 import androidx.compose.material.icons.filled.Movie
 import androidx.compose.material.icons.filled.Search
 import androidx.compose.material3.Button
+import androidx.compose.material3.ButtonDefaults
 import androidx.compose.material3.ExperimentalMaterial3Api
 import androidx.compose.material3.Icon
+import androidx.compose.material3.IconButton
 import androidx.compose.material3.Scaffold
 import androidx.compose.material3.SearchBar
 import androidx.compose.material3.Surface
@@ -133,6 +138,8 @@ fun Scree(windowClass: WindowSizeClass,homeViewModel: HomeViewModel,navControlle
                             horizontalArrangement = Arrangement.spacedBy(16.dp),
                             verticalArrangement = Arrangement.spacedBy(20.dp)
                         ) {
+
+
 
 
                             items(movies) {
@@ -337,6 +344,7 @@ fun Scree(windowClass: WindowSizeClass,homeViewModel: HomeViewModel,navControlle
                                             color = Color.White
 
                                         )
+
                                     }
 
 
@@ -353,6 +361,7 @@ fun Scree(windowClass: WindowSizeClass,homeViewModel: HomeViewModel,navControlle
 
             }}
 }
+
 
 
 
